@@ -62,6 +62,10 @@ module.exports = function(url, apikey) {
             fresh.get('/helpdesk/tickets/' + id + '.json', callback);
         },
 
+        getForum: function(id, callback){
+            fresh.get('/discussions/forums/' + id + '.json', callback);
+        },
+
         postNoteToTicket: function(id, note, is_private, callback){
             var data = {
                 'helpdesk_note':
