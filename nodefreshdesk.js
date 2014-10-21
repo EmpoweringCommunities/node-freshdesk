@@ -62,8 +62,24 @@ module.exports = function(url, apikey) {
             fresh.get('/helpdesk/tickets/' + id + '.json', callback);
         },
 
-        getForum: function(id, callback){
-            fresh.get('/discussions/forums/' + id + '.json', callback);
+        getCategories: function(callback){
+            // View All Forum Category
+            fresh.get('/categories.json', callback);
+        },
+
+        getCategory: function(categoryId, callback){
+            // View Forum Category
+            fresh.get('/categories/' + categoryId + '.json', callback);
+        },
+
+        getForum: function(categoryId, forumId, callback){
+            // View Forum
+            fresh.get('/categories/' + categoryId + '/forums/' + forumId + '.json', callback);
+        },
+
+        getTopic: function(categoryId, forumId, topicId, callback){
+            // View Topic
+            fresh.get('/categories/' + categoryId + '/forums/' + forumId + '/topics/' + topicId + '.json', callback);
         },
 
         postNoteToTicket: function(id, note, is_private, callback){

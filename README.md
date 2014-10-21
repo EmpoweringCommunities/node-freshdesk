@@ -37,8 +37,10 @@ freshdesk.callMethods();
 | **putContact** (id, contact, callback) | callback(err, res, body) | Updates a contact |
 | **getContacts** (callback) | callback(err, res, body) | Provides all contacts (that are not deleted)|
 | **getContactByEmail** (email, callback) | callback(contact) | Provides single contact if it exists, and is not deleted. Else it returns null. |
-| **getForums** (callback) | callback(err, res, body) | Provides all forums. |
-
+| **getCategories** (callback) | callback(err, res, body) | Provides all forums categories. |
+| **getCategory** (categoryId, callback) | callback(err, res, body) | Provides forums in a category. |
+| **getForum** (categoryId, forumId, callback) | callback(err, res, body) | Provides a forum. |
+| **getTopic** (categoryId, forumId, topicId, callback) | callback(err, res, body) | Provides a forum topic. |
 
 ## Examples
 
